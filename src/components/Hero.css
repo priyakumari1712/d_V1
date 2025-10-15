@@ -1,0 +1,79 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: #0f1117;
+}
+
+.hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.05) contrast(1.05);
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      60% 80% at 80% 40%,
+      rgba(255, 100, 60, 0.45) 0%,
+      rgba(255, 100, 60, 0.12) 35%,
+      rgba(15, 17, 23, 0.6) 70%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(15, 17, 23, 0.25) 0%,
+      rgba(15, 17, 23, 0.75) 100%
+    );
+  pointer-events: none;
+}
+
+.hero__content {
+  margin-top: 35vh;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 0 20px;
+}
+.hero__eyebrow {
+   font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  opacity: 0.9;
+  font-weight: 700;
+}
+.hero__heading {
+    width: 45%;
+    text-align: center;
+  margin: 10px 0 16px;
+  font-size: clamp(28px, 5vw, 60px);
+  line-height: 1.05;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.hero__cta {
+  display: inline-block;
+  margin-top: 6px;
+  background: #d21616;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 24px;
+  font-weight: 700;
+}
+
+.hero__cta:hover {
+  color: #d21616;
+  background-color: #fff;
+}
+
+
