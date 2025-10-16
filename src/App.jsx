@@ -4,6 +4,7 @@ import './App.css'
 import NavBar from './components/NavBar'
 import Home from './components/Home'
 import AboutUs from './components/AboutUs/AboutUs'
+import AboutMain from './components/AboutUs/AboutMain'
 import { initNavbarScrollTrigger, cleanupScrollTrigger } from './components/script'
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<AboutUs />} />
+        <Route path="/about" element={<AboutMain />} />
       </Routes>
     </Router>
   )

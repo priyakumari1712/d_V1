@@ -13,8 +13,8 @@ function AboutUs() {
   return (
     <section className="about-us">
       <div className="about-us__background">
-        <div className="about-us__diagonal-stripe"></div>
-        <div className="about-us__reflective-surface"></div>
+        {/* <div className="about-us__diagonal-stripe"></div>
+        <div className="about-us__reflective-surface"></div> */}
       </div>
       
       <div className="about-us__container">

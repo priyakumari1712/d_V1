@@ -122,6 +122,25 @@
     pointer-events: auto;
 }
 
+/* Support Dropdown Styles */
+.support-dropdown-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Create extended hover area to keep dropdown open */
+.support-dropdown-container::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -50px;
+    right: -50px;
+    bottom: -150px;
+    z-index: 999;
+    pointer-events: auto;
+}
+
 .products-dropdown {
     position: absolute;
     top: 140%;
@@ -240,6 +259,52 @@
     width: 24px !important;
     height: 24px !important;
     /* color: #fefefe !important; */
+}
+
+.support-dropdown {
+    position: absolute;
+    top: 140%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px;
+    z-index: 1000;
+    margin-top: 10px;
+    clip-path: polygon(0 0, calc(100% - 50px) 0, 100% 50px, 100% 100%, 0 100%);
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.support-dropdown .dropdown-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.support-dropdown .dropdown-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.support-dropdown .dropdown-item:hover {
+    transform: translateX(5px);
+    background-color: #f8f8f8;
+    padding-left: 10px;
+    margin-left: -10px;
+    border-radius: 5px;
+}
+
+.support-dropdown .dropdown-item h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+    font-family: "Orbitron", sans-serif ;
 }
 
 /* Fixed navbar class for mobile scroll trigger */
@@ -418,6 +483,37 @@
     .search-button {
         background-color: rgba(255, 255, 255, 0.1);
         border-color: rgba(255, 255, 255, 0.3);
+        color: white;
+    }
+    
+    /* Mobile support dropdown styles */
+    .support-dropdown {
+        position: relative;
+        width: 100%;
+        margin-top: 0;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 15px;
+        background-color: rgba(0, 0, 0, 0.8);
+        clip-path: none;
+    }
+    
+    .support-dropdown .dropdown-item {
+        margin-bottom: 10px;
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .support-dropdown .dropdown-item:hover {
+        transform: none;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding-left: 10px;
+        margin-left: -10px;
+        border-radius: 5px;
+    }
+    
+    .support-dropdown .dropdown-item h3 {
+        font-size: 16px;
         color: white;
     }
 }

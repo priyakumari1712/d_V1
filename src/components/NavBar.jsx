@@ -10,11 +10,16 @@ import searchIcon from "/search-2-line.svg"
 
 function NavBar() {
   const [isProductsOpen, setIsProductsOpen] = useState(false)
+  const [isSupportOpen, setIsSupportOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const toggleProducts = () => setIsProductsOpen((v) => !v)
   const openProducts = () => setIsProductsOpen(true)
   const closeProducts = () => setIsProductsOpen(false)
+  
+  const toggleSupport = () => setIsSupportOpen((v) => !v)
+  const openSupport = () => setIsSupportOpen(true)
+  const closeSupport = () => setIsSupportOpen(false)
   
   const toggleMobileMenu = () => setIsMobileMenuOpen((v) => !v)
   return (
@@ -89,7 +94,25 @@ function NavBar() {
                 )}
               </div>
               <Link to="/about">About</Link>
-              <a href="">Support</a>
+              <div className="support-dropdown-container" onMouseEnter={openSupport} onMouseLeave={closeSupport}>
+                <a href="">Support</a>
+                {isSupportOpen && (
+                  <div className="support-dropdown">
+                    <div className="dropdown-item">
+                      <h3>Instructions, Tips & Guides</h3>
+                    </div>
+                    <div className="dropdown-item">
+                      <h3>Media</h3>
+                    </div>
+                    <div className="dropdown-item">
+                      <h3>Register Warranty</h3>
+                    </div>
+                    <div className="dropdown-item">
+                      <h3>Check Your Warranty</h3>
+                    </div>
+                  </div>
+                )}
+              </div>
               <a href="">Contact</a>
             </div>
 
@@ -171,7 +194,25 @@ function NavBar() {
             )}
           </div>
           <Link to="/about" onClick={toggleMobileMenu}>About</Link>
-          <a href="" onClick={toggleMobileMenu}>Support</a>
+          <div className="support-dropdown-container">
+            <a href="" onClick={toggleSupport}>Support</a>
+            {isSupportOpen && (
+              <div className="support-dropdown">
+                <div className="dropdown-item">
+                  <h3>Instructions, Tips & Guides</h3>
+                </div>
+                <div className="dropdown-item">
+                  <h3>Media</h3>
+                </div>
+                <div className="dropdown-item">
+                  <h3>Register Warranty</h3>
+                </div>
+                <div className="dropdown-item">
+                  <h3>Check Your Warranty</h3>
+                </div>
+              </div>
+            )}
+          </div>
           <a href="" onClick={toggleMobileMenu}>Contact</a>
           <a href="" onClick={toggleMobileMenu}>Find the Distributor</a>
           <a href="" onClick={toggleMobileMenu}>Find installer</a>
